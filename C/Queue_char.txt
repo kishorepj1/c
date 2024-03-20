@@ -4,7 +4,7 @@
 char queue[10]; // Changed to char
 int front = 0, rear = -1, count = 0;
 
-void insert_rear(char item) { // Changed parameter to char
+void insert_rear(char item) { 
   if (count == MAX) {
     printf("Q overflow\n");
     return;
@@ -22,7 +22,7 @@ void delete_front() {
     return;
   }
 
-  printf("Item deleted = %c\n", queue[front]); // Changed %d to %c
+  printf("Item deleted = %c\n", queue[front]); 
   front = (front + 1) % MAX;
 
   count--;
@@ -39,7 +39,7 @@ void display() {
   printf("Queue : ");
   temp = front;
   for (i = 1; i <= count; i++) {
-    printf("%c ", queue[temp]); // Changed %d to %c
+    printf("%c ", queue[temp]); 
     temp = (temp + 1) % MAX;
   }
 
@@ -47,16 +47,16 @@ void display() {
 }
 
 int main() {
-  char item; // Changed to char
+  char item; 
   int choice;
 
   for (;;) {
     printf("1: insert 2:Delete 3:Display 4:Exit : ");
-    scanf(" %d", &choice); // Keep this as %d since choice is an int
+    scanf(" %d", &choice); 
     switch (choice) {
     case 1:
       printf("Enter the item : ");
-      scanf(" %c", &item); // Changed %d to %c and added a space before %c to properly read char after an int
+      scanf(" %c", &item); 
       insert_rear(item);
       break;
 
